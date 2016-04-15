@@ -7,6 +7,7 @@ var hx = hyperx(h)
 var Header = require('./header')
 var Player = require('./player')
 var TorrentList = require('./torrent-list')
+var Preferences = require('./preferences')
 var Modals = {
   'open-torrent-address-modal': require('./open-torrent-address-modal'),
   'update-available-modal': require('./update-available-modal'),
@@ -81,6 +82,8 @@ function App (state, dispatch) {
       return TorrentList(state, dispatch)
     } else if (state.location.current().url === 'player') {
       return Player(state, dispatch)
+    } else if (state.location.current().url === 'preferences') {
+      return Preferences(state, dispatch)
     }
   }
 }
